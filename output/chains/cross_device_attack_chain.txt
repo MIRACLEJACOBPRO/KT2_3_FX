@@ -1,0 +1,32 @@
+
+[链路开始时间] 2025-06-18T14:51:45
+
+[跨设备攻击链路]
+└─192.168.1.200 (外部攻击者IP)
+  ├─主机: 192.168.1.101
+    ├─[AUTH_FAILURE] -> /usr/sbin/sshd (PROCESS) PID:1001 时间:2025-06-18T14:51:45
+    │   └─/var/log/auth.log (FILE)
+    ├─[AUTH_FAILURE] -> /usr/sbin/sshd (PROCESS) PID:1001 时间:2025-06-18T14:51:45
+    │   └─/var/log/auth.log (FILE)
+    ├─[FILE_READ] -> /bin/cat (PROCESS) PID:1003 时间:2025-06-18T14:53:10
+    │   └─/etc/arm/config.ini (FILE)
+    ├─[FILE_READ] -> /bin/cat (PROCESS) PID:1004 时间:2025-06-18T14:53:45
+    │   └─/etc/arm/credentials.dat (FILE)
+    └─[FILE_DELETE] -> /bin/rm (PROCESS) PID:1007 时间:2025-06-18T15:07:20
+        └─/var/log/auth.log (FILE)
+  │
+  │  [横向移动] ↓
+  │
+  └─主机: 192.168.1.106
+    ├─[AUTH_FAILURE] -> /usr/sbin/sshd (PROCESS) PID:2001 时间:2025-06-18T14:59:25
+    │   └─/var/log/auth.log (FILE)
+    ├─[AUTH_FAILURE] -> /usr/sbin/sshd (PROCESS) PID:2001 时间:2025-06-18T14:59:25
+    │   └─/var/log/auth.log (FILE)
+    ├─[FILE_READ] -> /bin/cat (PROCESS) PID:2004 时间:2025-06-18T15:04:25
+    │   └─/etc/vehicle/auth_keys.dat (FILE)
+    ├─[FILE_READ] -> /usr/bin/scp (PROCESS) PID:2005 时间:2025-06-18T15:05:15
+    │   └─/etc/vehicle/auth_keys.dat (FILE)
+    ├─[FILE_READ] -> /usr/bin/scp (PROCESS) PID:2005 时间:2025-06-18T15:05:15
+    │   └─/etc/vehicle/auth_keys.dat (FILE)
+    └─[FILE_DELETE] -> /bin/rm (PROCESS) PID:2006 时间:2025-06-18T15:07:20
+        └─/var/log/auth.log (FILE)
