@@ -1,0 +1,101 @@
+[
+  {
+    "timestamp": "2025-06-18T14:34:12",
+    "type": "PROCESS_LAUNCH",
+    "subject": {
+      "uuid": "server-001",
+      "cmdLine": "/usr/bin/systemd",
+      "pid": 1,
+      "user": "root",
+      "host": "192.168.1.100",
+      "exe": "/usr/bin/systemd"
+    },
+    "object": {
+      "path": "/var/log/system.log",
+      "type": "FILE"
+    },
+    "properties": {
+      "success": true
+    }
+  },
+  {
+    "timestamp": "2025-06-18T14:51:45",
+    "type": "AUTH_FAILURE",
+    "subject": {
+      "uuid": "arm1-001",
+      "cmdLine": "/usr/sbin/sshd",
+      "pid": 1001,
+      "user": "root",
+      "host": "192.168.1.101",
+      "exe": "/usr/sbin/sshd"
+    },
+    "object": {
+      "path": "/var/log/auth.log",
+      "type": "FILE"
+    },
+    "properties": {
+      "success": false,
+      "source_ip": "192.168.1.200",
+      "username": "robot"
+    }
+  },
+  {
+    "timestamp": "2025-06-18T14:53:10",
+    "type": "FILE_READ",
+    "subject": {
+      "uuid": "arm1-003",
+      "cmdLine": "/bin/cat /etc/arm/config.ini",
+      "pid": 1003,
+      "user": "robot",
+      "host": "192.168.1.101",
+      "exe": "/bin/cat"
+    },
+    "object": {
+      "path": "/etc/arm/config.ini",
+      "type": "FILE"
+    },
+    "properties": {
+      "success": true
+    }
+  },
+  {
+    "timestamp": "2025-06-18T14:59:25",
+    "type": "AUTH_FAILURE",
+    "subject": {
+      "uuid": "vehicle-001",
+      "cmdLine": "/usr/sbin/sshd",
+      "pid": 2001,
+      "user": "root",
+      "host": "192.168.1.106",
+      "exe": "/usr/sbin/sshd"
+    },
+    "object": {
+      "path": "/var/log/auth.log",
+      "type": "FILE"
+    },
+    "properties": {
+      "success": false,
+      "source_ip": "192.168.1.200",
+      "username": "vehicle_admin"
+    }
+  },
+  {
+    "timestamp": "2025-06-18T15:07:20",
+    "type": "FILE_DELETE",
+    "subject": {
+      "uuid": "arm1-007",
+      "cmdLine": "/bin/rm -f /var/log/auth.log",
+      "pid": 1007,
+      "user": "robot",
+      "host": "192.168.1.101",
+      "exe": "/bin/rm"
+    },
+    "object": {
+      "path": "/var/log/auth.log",
+      "type": "FILE"
+    },
+    "properties": {
+      "success": true
+    }
+  }
+]
